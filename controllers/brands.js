@@ -1,12 +1,11 @@
-
-const Brands = require('../models/Brand')
+const Brands = require("../models/Brand");
 
 const controllers = {
   getBrand: async (req, res) => {
     const brands = await Brands.find({
-      product: req.params.id
+      product: req.params.id,
     });
-    res.json(brands)
+    res.json(brands);
   },
 
   postBrand: async (req, res) => {
@@ -19,25 +18,19 @@ const controllers = {
 
   deleteBrand: async (req, res) => {
     const brand = await Brands.findByIdAndDelete({
-      _id: req.params.id
+      _id: req.params.id,
     });
     res.json(brand);
   },
   patchBrand: async (req, res) => {
     try {
-    const id = req.params.id;
-    const { name } = req.body.name
-      const brand = await  Brands.findByIdAndUpdate(
-        id,
-        { name  },
-        { new: true }
-
-    res.json(brand)
-  } catch (e) {
-      res.json(e)
-  }
-}
-}
+      const id = req.params.id;
+      const { name } = req.body.name;
+      const brand = await Brands.findByIdAndUpdate(id, { name }, { new: true });
+      res.json(brand);
+    } catch (e) {
+      res.json(e);
+    }
+  },
+};
 module.exports = controllers;
-
-
