@@ -7,11 +7,11 @@ const reviewsSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "users"
+    ref: "user"
   },
   product: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "users"
+    ref: "product"
   },
   createdAt: {
     type: Date,
