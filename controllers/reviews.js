@@ -7,6 +7,7 @@ const controllers = {
     });
     res.json(reviews)
   },
+
   postReview: async (req, res) => {
     const review = new Reviews({
       title: req.body.title,
@@ -14,13 +15,14 @@ const controllers = {
       product: req.body.product
     });
     await review.save();
-    res.json(review)
+    res.json(review);
   },
+
   deleteReview: async (req, res) => {
     const reviewDelete = await Reviews.findByIdAndDelete({
       _id: req.params.id
     });
-    res.json(reviewDelete)
+    res.json(reviewDelete);
   }
 };
 module.exports = controllers;
