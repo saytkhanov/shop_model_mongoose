@@ -14,4 +14,4 @@ const brandSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-module.exports = mongoose.model("brands", brandSchema);
+module.exports = mongoose.model("brand", brandSchema);
