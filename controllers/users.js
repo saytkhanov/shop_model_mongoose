@@ -17,3 +17,5 @@ class userController {
     }
   }
 }
+
+module.exports = User;
