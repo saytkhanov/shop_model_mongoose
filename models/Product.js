@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Product = mongoose.Schema({
+const Product = new mongoose.Schema({
     nameProduct: {type: String, required: true},
     brand: {type: mongoose.Types.ObjectId, required: true},
     category: {type: mongoose.Types.ObjectId , required: true, ref: 'category'},
