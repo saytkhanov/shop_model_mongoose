@@ -1,26 +1,26 @@
-const Reviews = require('../models/Reviewe')
+const mongoose = require("mongoose");
 
-const controllers = {
-  getPostReviews: async (req, res) => {
-    const reviews = await Reviews.find({
-      product: req.params.id
-    });
-    res.json(reviews)
+const reviewsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
   },
-  postReview: async (req, res) => {
-    const review = new Reviews({
-      title: req.body.title,
-      user: req.body.user,
-      product: req.body.product
-    });
-    await review.save();
-    res.json(review)
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users"
   },
-  deleteReviews: async (req, res) => {
-    const reviewDelete = await Reviews.findByIdAndDelete({
-      _id: req.params.id
-    });
-    res.json(reviewDelete)
-  }
-};
-module.exports = controllers;
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users"
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+module.exports = mongoose.model("reviews", reviewsSchema);
