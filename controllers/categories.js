@@ -24,3 +24,5 @@ const controllers = {
     res.json(destroyCategory)
   }
 }
+
+module.exports = controllers
