@@ -5,6 +5,10 @@ const cartSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: 'user'
   },
+  updatedAt: {
+    type: Date,
+    default: Date.now
+  },
   createdAt: {
     type: Date,
     default: Date.now
