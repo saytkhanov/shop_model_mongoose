@@ -61,10 +61,10 @@ class productController {
   }
   async delete(req, res) {
     try {
-      const comment = await Product.findByIdAndDelete({
-        id: req.params.id,
+      const product = await Product.findByIdAndDelete({
+        _id: req.params.id,
       }).lean();
-      res.json(comment);
+      res.json(product);
     } catch (e) {
       res.json(e.message);
     }
