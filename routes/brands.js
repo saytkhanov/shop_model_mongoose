@@ -2,7 +2,7 @@ const { Router } = require('express');
 const controllers = require('../controllers/brands')
 const router = Router();
 
-router.get('/brands/:id/products', controllers.getBrand)
+
 router.post('/brands/add', controllers.postBrand)
 router.delete('/brands/:id', controllers.deleteBrand)
 router.patch('/brands/:id/patch', controllers.deleteBrand)
