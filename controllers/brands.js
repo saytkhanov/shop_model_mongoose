@@ -1,13 +1,6 @@
 const Brands = require("../models/Brand");
 
 const controllers = {
-  getBrand: async (req, res) => {
-    const brands = await Brands.find({
-      product: req.params.id,
-    });
-    res.json(brands);
-  },
-
   postBrand: async (req, res) => {
     const brand = new Brands({
       name: req.body.name,
