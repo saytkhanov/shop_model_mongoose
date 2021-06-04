@@ -26,9 +26,18 @@ class productController {
       res.json(e.message);
     }
   }
-  async getById(req, res) {
+  async getByCategory(req, res) {
     try {
       const product = await Product.find({ category: req.params.id }).lean();
+
+      res.json(product);
+    } catch (e) {
+      res.json(e.message);
+    }
+  }
+  async getByBrand(req, res) {
+    try {
+      const product = await Product.find({ brand: req.params.id }).lean();
 
       res.json(product);
     } catch (e) {
