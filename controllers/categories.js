@@ -5,13 +5,13 @@ const controllers = {
     const categories = await Category.find()
     res.json(categories)
   },
- postCategories: async (req, res) => {
+  postCategories: async (req, res) => {
     const addCategories = await new Category({
       name: req.body.name
     })
-   await addCategories.save()
-   res.json(addCategories)
- },
+    await addCategories.save()
+    res.json(addCategories)
+  },
   patchCategories: async (req, res) => {
     const id = req.params.id;
     const name = req.body;
