@@ -18,4 +18,4 @@ class userController {
   }
 }
 
-module.exports = User;
+module.exports = new userController();
