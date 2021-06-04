@@ -7,4 +7,4 @@ router.post('/brands/add', controllers.postBrand)
 router.delete('/brands/:id', controllers.deleteBrand)
 router.patch('/brands/:id/patch', controllers.deleteBrand)
 
-module.exports = controllers;
+module.exports = router;
